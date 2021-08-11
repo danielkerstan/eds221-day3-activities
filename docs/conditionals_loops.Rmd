@@ -1,0 +1,99 @@
+---
+title: "conditionals_loops"
+author: "Daniel Kerstan"
+date: "8/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+Task 1
+
+```{r}
+pm2_5 <- 160
+
+if (pm2_5 < 100) {
+  print("Low to moderate risk")
+} else if(pm2_5 < 150 & pm2_5 >= 100) {
+  print("Unhealthy for sensitive groups")
+} else if(pm2_5 >= 150) {
+  print("Health risk present")
+}
+
+
+```
+
+Task 2
+
+```{r}
+species <- "blue whale"
+
+if (species == str_detect(species, pattern = "whale")) {
+  print("you found a whale")
+}
+
+```
+
+Task 3
+
+```{r}
+max_airtemp_c <- 24.1
+
+if (max_airtemp_c > 27) {
+  print("Temperature too high")
+} else {
+  print("Temperature OK")
+}
+```
+
+Task 4
+
+```{r}
+base_burrito <- 6.50
+veggie_b <- base_burrito
+chicken_b <- base_burrito + 3.00
+steak_b <- base_burrito + 3.25
+
+main_ingrediant <- "veggie"
+
+if (main_ingrediant == "veggie") {
+  print(veggie_b)
+} else if (main_ingrediant == "chicken") {
+  print(chicken_b)
+} else if (main_ingrediant == "steak") {
+  print(steak_b)
+}
+
+
+```
+
+
+Task 5
+
+```{r}
+fish <- c(8, 10, 12, 23)
+fish_type <- c("goldfish", "tetras", "guppies", "mollies")
+total_fish <- vector(mode = "numeric", length = length(fish_type))
+
+for (i in seq_along(fish_type)) {
+  how_many <- fish[i] / sum(fish)
+  total_fish[i] <- how_many
+}
+  
+total_fish
+
+```
+
+
+Task 6
+
+```{r}
+for (i in seq_along(month.name)) {
+  print(paste(month.name[i], "is month", i))
+}
+```
+
+
